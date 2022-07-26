@@ -1,11 +1,10 @@
 package com.cdg;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.FileReader;
+import java.io.*;
 import java.util.*;
 
 import org.apache.commons.lang3.StringUtils;
+import org.w3c.dom.ls.LSOutput;
 
 public class main
 {
@@ -44,6 +43,15 @@ public class main
         System.out.printf("\n\n");
     }
 
+    private static void sortKeyWriteFile(Map<String, Integer> map, PrintWriter printWriter) { // key 기준 정렬
+        List<String> keySet = new ArrayList<>(map.keySet());
+        Collections.sort(keySet); // 오름차순 정렬
+        for (String key : keySet) {
+            printWriter.write(key + " : " + map.get(key) + "\n");
+        }
+        printWriter.write("\n\n");
+    }
+
     private static void sortValuePrint(Map<String, Integer> map, int rank, boolean persent) { // value 기준 정렬
         List<String> keySet = new ArrayList<>(map.keySet());
         keySet.sort((o1, o2) -> map.get(o2).compareTo(map.get(o1)));
@@ -56,6 +64,20 @@ public class main
             }
         }
         System.out.printf("\n\n");
+    }
+
+    private static void sortValueWriteFile(Map<String, Integer> map, int rank, boolean persent, PrintWriter printWriter) { // value 기준 정렬
+        List<String> keySet = new ArrayList<>(map.keySet());
+        keySet.sort((o1, o2) -> map.get(o2).compareTo(map.get(o1)));
+        for (int i = 0; i < rank; i++) {
+            if (persent) { //  비율로 표시
+                int total = map.values().stream().mapToInt(Integer::intValue).sum();
+                printWriter.write(keySet.get(i) + " : " + String.format("%.1f", ((double)map.get(keySet.get(i)) / (double)total * 100)) + "%\n");
+            } else {
+                printWriter.write(keySet.get(i) + " : " + map.get(keySet.get(i)) + "\n");
+            }
+        }
+        printWriter.write("\n\n");
     }
 
     private static void printLog() {
@@ -71,6 +93,25 @@ public class main
         sortValuePrint(webBrowserMap, 5, true);
     }
 
+    private static void writeLog() throws IOException {
+        File file = new File("output.log");
+        if (!file.exists()) file.createNewFile();
+        FileWriter fileWriter = new FileWriter(file);
+        PrintWriter printWriter = new PrintWriter(fileWriter);
+
+        printWriter.write("최다호출 APIKEY\n\n");
+        printWriter.write(maxValue(apiKeyMap) + "\n\n\n");
+        printWriter.write("상태코드 별 횟수\n\n");
+        sortKeyWriteFile(stateCodeMap, printWriter);
+        printWriter.write("상위 3개의 API ServiceID와 각각의 요청 수\n\n");
+        sortValueWriteFile(apiServiceMap, 3, false, printWriter);
+        printWriter.write("피크 시간대\n\n");
+        printWriter.write(maxValue(peakTimeMap) + "\n\n\n");
+        printWriter.write("웹 브라우저 별 사용비율\n\n");
+        sortValueWriteFile(webBrowserMap, 5, true, printWriter);
+        printWriter.close();
+    }
+
     public static void main( String[] args ) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new FileReader("input.log"));
         while (true) {
@@ -78,7 +119,8 @@ public class main
             if (line == null) break;
             logAnalysis(line);
         }
-        printLog();
+//        printLog();
+        writeLog();
         bufferedReader.close();
     }
 }

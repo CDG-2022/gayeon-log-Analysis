@@ -5,14 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a53d063-9738-46a0-8165-a31f9688cc29" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cdg/AnalysisManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cdg/LogFileReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cdg/LogFileWriter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cdg/LogMap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cdg/LogParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cdg/MapSorter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/input.log" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cdg/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cdg/main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -36,6 +50,7 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
@@ -47,7 +62,7 @@
       <module name="log-Analysis" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.cdg.*" />
+          <option name="PATTERN" value="com.cdg.FileReader" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -57,7 +72,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.main" />
+        <item itemvalue="Application.com.cdg.main" />
       </list>
     </recent_temporary>
   </component>
@@ -69,7 +84,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1658731972318</updated>
-      <workItem from="1658731974462" duration="20432000" />
+      <workItem from="1658731974462" duration="35365000" />
     </task>
     <servers />
   </component>

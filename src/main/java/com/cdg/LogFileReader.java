@@ -7,13 +7,13 @@ import java.io.IOException;
 
 public class LogFileReader {
     private BufferedReader bufferedReader;
+    private static final String READ_FILE_NAME = "input.log";
 
     public void logFileOpen() throws FileNotFoundException {
-        bufferedReader = new BufferedReader(new FileReader("input.log"));
+        bufferedReader = new BufferedReader(new FileReader(READ_FILE_NAME));
     }
     public String logFileRead() throws IOException {
-        String line = bufferedReader.readLine();
-        return line;
+        return bufferedReader.readLine();
     }
     public void logFileClose() throws IOException {
         bufferedReader.close();

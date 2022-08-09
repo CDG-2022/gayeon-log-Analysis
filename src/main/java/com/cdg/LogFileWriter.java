@@ -6,16 +6,20 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 public class LogFileWriter {
+    FileWriter fileWriter;
+    PrintWriter printWriter;
+    File file;
     private MapSorter mapSorter = new MapSorter();
     private static final String OUTPUT_FILE_NAME = "output.log"; // 쓰려는 file name
-    public void logFileWriter(LogMap logMap) throws IOException {
-        File file = new File(OUTPUT_FILE_NAME);
+    public LogFileWriter() throws IOException{
+        file = new File(OUTPUT_FILE_NAME);
         if (!file.exists()) {
             file.createNewFile();
         }
-        FileWriter fileWriter = new FileWriter(file);
-        PrintWriter printWriter = new PrintWriter(fileWriter);
-
+        fileWriter = new FileWriter(file);
+        printWriter = new PrintWriter(fileWriter);
+    }
+    public void logFileWriter(LogMap logMap) {
         printWriter.write("최다호출 APIKEY\n\n");
         if (mapSorter.getMaxValues(logMap.getApiKeyMap()).size() != 0) {
             for (int i = 0; i < mapSorter.getMaxValues(logMap.getApiKeyMap()).size(); i++) {
@@ -45,11 +49,13 @@ public class LogFileWriter {
         }
         printWriter.println();
         printWriter.write("웹 브라우저 별 사용비율\n\n");
-        if (mapSorter.sortOrderByValueDesc(logMap.getWebBrowserMap(), 5, true).size() != 0 ) {
+        if (mapSorter.sortOrderByValueDesc(logMap.getWebBrowserMap(), 5, true).size() != 0) {
             for (int i = 0; i < mapSorter.sortOrderByValueDesc(logMap.getWebBrowserMap(), 5, true).size(); i++) {
                 printWriter.write((String) mapSorter.sortOrderByValueDesc(logMap.getWebBrowserMap(), 5, true).get(i) + "\n");
             }
         }
         printWriter.close();
     }
+
+    private void writeContent(boolean isProcessing, )
 }

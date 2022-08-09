@@ -4,7 +4,7 @@ import java.io.PrintWriter;
 import java.util.*;
 
 public class MapSorter {
-    public List getMaxValues(Map<String, Integer> map) {
+    public List getMaxValues(Map<String, Integer> map) { // 가장 큰 value 값의 key 반환
         List<String> result = new ArrayList<String>();
         int max = Collections.max(map.values());
         for (Map.Entry<String, Integer> entry : map.entrySet()) {
@@ -28,7 +28,7 @@ public class MapSorter {
         keySet.sort((o1, o2) -> map.get(o2).compareTo(map.get(o1)));
         List<String> result = new ArrayList<String>();
         for (int i = 0; i < rank; i++) { // 상위 몇 개
-            if (percent) { //  비율로 표시
+            if (percent) { // 비율로 표시
                 int total = map.values().stream().mapToInt(Integer::intValue).sum();
                 result.add(keySet.get(i) + " : " + String.format("%.1f", ((double)map.get(keySet.get(i)) / (double)total * 100)) + "%");
             } else {

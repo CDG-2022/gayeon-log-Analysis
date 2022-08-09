@@ -9,7 +9,7 @@ public class LogParser {
 
     public void logParse(LogMap logMap) throws IOException {
         logFileReader.logFileOpen();
-        while (true) {
+        while (true) { // TODO : 무한 루프 없애기 ...
             String[] splitLog = StringUtils.substringsBetween(logFileReader.logFileRead(), "[", "]");
             if (splitLog == null) break;
             logMap.getStateCodeMap().put(splitLog[0], logMap.getStateCodeMap().getOrDefault(splitLog[0], 0) + 1);

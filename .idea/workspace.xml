@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6a53d063-9738-46a0-8165-a31f9688cc29" name="Changes" comment="리팩토링">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cdg/AnalysisManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cdg/AnalysisManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cdg/LogFileWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cdg/LogFileWriter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/cdg/mainTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/cdg/mainTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +48,7 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
 }</component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.mainTest.shouldAnswerWithTrue">
     <configuration name="main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.cdg.main" />
       <module name="log-Analysis" />
@@ -64,8 +62,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="mainTest.shouldAnswerWithTrue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="log-Analysis" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.cdg.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.cdg" />
+      <option name="MAIN_CLASS_NAME" value="com.cdg.mainTest" />
+      <option name="METHOD_NAME" value="shouldAnswerWithTrue" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.mainTest.shouldAnswerWithTrue" />
         <item itemvalue="Application.main" />
       </list>
     </recent_temporary>
@@ -83,7 +98,8 @@
       <workItem from="1659950180755" duration="1918000" />
       <workItem from="1660053752919" duration="4020000" />
       <workItem from="1660660955696" duration="5101000" />
-      <workItem from="1660740177798" duration="904000" />
+      <workItem from="1660740177798" duration="3097000" />
+      <workItem from="1660747298761" duration="4421000" />
     </task>
     <task id="LOCAL-00001" summary="리팩토링">
       <created>1660056778732</created>
